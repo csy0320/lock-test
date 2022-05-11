@@ -1,6 +1,6 @@
 package cn.jjdcn.lock.locktest.controller;
 
-import cn.jjdcn.lock.locktest.entity.Student;
+import cn.jjdcn.lock.locktest.entity.StudentEntity;
 import cn.jjdcn.lock.locktest.repostory.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +16,6 @@ public class StudentController {
     StudentRepository studentRepository;
 
     @PostMapping("add")
-    public void add(@RequestBody Student student) {
+    public void add(@RequestBody StudentEntity student) {
     }
 }

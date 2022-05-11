@@ -1,16 +1,13 @@
 package cn.jjdcn.lock.locktest.repostory;
 
-import cn.jjdcn.lock.locktest.entity.Student;
-import org.springframework.data.jpa.repository.support.JpaEntityInformation;
-import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import cn.jjdcn.lock.locktest.entity.StudentEntity;
+import org.hibernate.annotations.Proxy;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
 
 @Repository
-public class StudentRepository extends SimpleJpaRepository<Student, Long> {
-    public StudentRepository(JpaEntityInformation<Student, ?> entityInformation, EntityManager entityManager) {
-        super(entityInformation, entityManager);
-    }
+@Proxy(lazy = false)
+public interface StudentRepository extends JpaRepository<StudentEntity, Long> {
 }
 
